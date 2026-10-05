@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #edf1ee;
+  --color-surface: #ffffff;
+  --color-ink: #14231f;
+  --color-ink-soft: #55665f;
+  --color-line: #d3dcd7;
+  --color-brand: #0e7c66;
+  --color-brand-dark: #0a5f4e;
+  --color-warn: #9a5200;
+  --color-warn-bg: #fff3dc;
+  --color-danger: #b3261e;
+  --font-sans: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+  button { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+/* The extracted data is shown on a strip of thermal paper with a torn bottom edge */
+.receipt-wrap {
+  filter: drop-shadow(0 2px 5px rgb(20 35 31 / 0.14));
+}
+.receipt-paper {
+  --tooth: 14px;
+  background: var(--color-surface);
+  padding-bottom: calc(var(--tooth) + 1.25rem);
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / var(--tooth) 100%;
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / var(--tooth) 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
