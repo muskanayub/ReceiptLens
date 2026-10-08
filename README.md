@@ -136,7 +136,3 @@ Vercel with root directory `client`, plus a `vercel.json` that forwards API call
 }
 ```
 
-## Before adding it to your resume
-
-Use numbers you measured yourself, such as receipts tested and extraction accuracy from the test in the
-ideas list. Only list what you can explain.
